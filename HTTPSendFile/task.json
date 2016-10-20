@@ -1,0 +1,68 @@
+{
+  "id": "cbe49980-96a7-11e6-8e6d-7d89e3eb574f",
+  "name": "HTTPSendFile",
+  "friendlyName": "Http Send File",
+  "description": "Uploads a file using HTTP protocol",
+  "author": "fernandoescolar",
+  "helpMarkDown": "Replace with markdown to show in help",
+  "category": "Utility",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [],
+  "version": {
+    "Major": "1",
+    "Minor": "0",
+    "Patch": "0"
+  },
+  "minimumAgentVersion": "1.95.0",
+  "instanceNameFormat": "Http Send File $(src)",
+  "inputs": [
+    {
+      "name": "src",
+      "type": "filePath",
+      "label": "File path",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "The file path you want to upload."
+    },
+    {
+      "name": "url",
+      "type": "string",
+      "label": "Url",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "The url to upload the file"
+    },
+    {
+      "name": "usr",
+      "type": "string",
+      "label": "User",
+      "defaultValue": "",
+      "required": false,
+      "helpMarkDown": "The user's name if authentication is required"
+    },
+    {
+      "name": "pwd",
+      "type": "string",
+      "label": "Password",
+      "defaultValue": "",
+      "required": false,
+      "helpMarkDown": "The user's password"
+    },
+    {
+      "name": "dmn",
+      "type": "string",
+      "label": "Domain",
+      "defaultValue": "",
+      "required": false,
+      "helpMarkDown": "The user's domain"
+    }
+  ],
+  "execution": {
+    "PowerShell": {
+      "target": "httpuploadfile.ps1"
+    }
+  }
+}
